@@ -5,6 +5,8 @@ import com.spider.vote.repository.UserRepository;
 import com.spider.vote.service.interfaces.UserService;
 import com.spider.vote.utils.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,7 @@ public class UserServiceImp implements UserService {
 
     @Autowired
     private UserRepository repository;
+
 
     @Override
     @Transactional
@@ -32,22 +35,32 @@ public class UserServiceImp implements UserService {
         return user;
     }
 
+    @Cacheable("users")
     @Override
     public List<User> getAll() {
         return repository.getAll();
     }
 
+    @CacheEvict(value = "users", allEntries = true)
     @Override
     public void delete(int id) {
         repository.delete(id);
     }
 
+    @CacheEvict(value = "users", allEntries = true)
     @Override
     public void update(User user) {
         Assert.notNull(user,"User must be not null ");
       repository.save(user);
     }
 
+    @CacheEvict(value = "users", allEntries = true)
+    @Override
+    public void evictCache() {
+        // only for evict cache
+    }
+
+    @CacheEvict(value = "users", allEntries = true)
     public User create(User user) {
         Assert.notNull(user, "user must not be null");
         return repository.save(user);

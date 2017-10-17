@@ -31,4 +31,8 @@ public interface CrudMenuDataJpa extends JpaRepository<Menu, Integer> {
     @Modifying
     int deleteById(Integer id);
 
+    @Transactional(readOnly = true)
+    @Query("SELECT m from Menu m")
+    List<Menu> getAllMenus();
+
 }

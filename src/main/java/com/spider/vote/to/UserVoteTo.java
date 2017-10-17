@@ -1,9 +1,12 @@
 package com.spider.vote.to;
 
+import com.spider.vote.domain.entity.Restaurant;
+import com.spider.vote.domain.entity.User;
 import com.spider.vote.web.HasId;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class UserVoteTo implements Serializable, HasId {
@@ -13,56 +16,57 @@ public class UserVoteTo implements Serializable, HasId {
 
     private Integer id;
 
-    private LocalDate date;
+    private LocalDateTime dateTime;
+
+    public Restaurant getChosenRestaurant() {
+        return chosenRestaurant;
+    }
+
+    public void setChosenRestaurant(Restaurant chosenRestaurant) {
+        this.chosenRestaurant = chosenRestaurant;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    private Restaurant chosenRestaurant;
 
 
-    private LocalTime time;
+    private User user;
 
-
-    private Integer chosenRestaurantId;
-
-
-    private Integer userId;
+    public UserVoteTo(LocalDateTime dateTime, Restaurant chosenRestaurant, User user) {
+        this(null, dateTime, chosenRestaurant, user);
+    }
 
     public UserVoteTo() {
 
     }
 
-    public UserVoteTo(Integer id, LocalDate date, LocalTime time, Integer chosenRestaurantId, Integer userId) {
+    public UserVoteTo(Integer id, LocalDateTime dateTime, Restaurant chosenRestaurant, User user) {
         this.id = id;
-        this.date = date;
-        this.time = time;
-        this.chosenRestaurantId = chosenRestaurantId;
-        this.userId = userId;
+        this.dateTime = dateTime;
+        this.chosenRestaurant = chosenRestaurant;
+        this.user = user;
     }
 
-    public Integer getUserId() {
-        return userId;
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
     }
 
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public Integer getChosenRestaurantId() {
-        return chosenRestaurantId;
-    }
-
-    public void setChosenRestaurantId(Integer chosenRestaurantId) {
-        this.chosenRestaurantId = chosenRestaurantId;
-    }
 
     @Override
     public Integer getId() {
-        return null;
+        return id;
     }
 
     @Override
@@ -70,11 +74,5 @@ public class UserVoteTo implements Serializable, HasId {
 
     }
 
-    public LocalTime getTime() {
-        return time;
-    }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
 }

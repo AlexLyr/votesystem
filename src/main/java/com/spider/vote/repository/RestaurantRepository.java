@@ -6,6 +6,8 @@ import com.spider.vote.repository.crudrepositories.CrudRestaurantsDataJpa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 import static com.spider.vote.utils.ValidationUtil.checkNotFound;
 import static com.spider.vote.utils.ValidationUtil.checkNotFoundWithId;
 
@@ -30,6 +32,10 @@ public class RestaurantRepository {
 
     public Restaurant saveRestaurant(Restaurant restaurant){
         return crudRepository.save(restaurant);
+    }
+
+    public List<Restaurant> getAllRestaurants(){
+        return crudRepository.findAll();
     }
 
 }

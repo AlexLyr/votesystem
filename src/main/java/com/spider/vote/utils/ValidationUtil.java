@@ -59,38 +59,6 @@ public class ValidationUtil {
         }
     }
 
-    public static void checkDateConsistent(UserVoteTo userVote) {
-        if (userVote.getDate() == null) {
-            userVote.setDate(LocalDate.now());
-        } else if (!userVote.getDate().isEqual(LocalDate.now())) {
-            throw new UserVoteIncorrectDateException(userVote + " must be with date=" + LocalDate.now());
-        }
-    }
-
-    public static void checkTimeConsistentForSave(UserVoteTo userVote) {
-        if (userVote.getTime() == null) {
-            LocalTime now = LocalTime.now();
-            if (now.isAfter(LocalTime.of(11, 0))) {
-                throw new UserVoteTooLateException("It is too late, user vote can't be created");
-            }
-            userVote.setTime(now);
-        }
-    }
-
-    public static void checkTimeConsistentForUpdate(UserVoteTo userVote) {
-        if (userVote.getTime() == null) {
-            userVote.setTime(LocalTime.now());
-        }
-        if (userVote.getTime().isAfter(LocalTime.of(11, 0))) {
-            throw new UserVoteTooLateException("It is too late, vote can't be changed");
-        }
-    }
-
-    public static void checkTimeConsistentForDelete() {
-        if (LocalTime.now().isAfter(LocalTime.of(11, 0))) {
-            throw new UserVoteTooLateException("It is too late, vote can't be deleted");
-        }
-    }
 
     public static Throwable getRootCause(Throwable t) {
         Throwable result = t;

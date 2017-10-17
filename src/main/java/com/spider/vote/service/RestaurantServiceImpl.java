@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.util.List;
+
 @Service
 public class RestaurantServiceImpl implements RestaurantService{
 
@@ -29,6 +31,10 @@ public class RestaurantServiceImpl implements RestaurantService{
     public Restaurant getRestaurantById(int id) {
         Assert.notNull(id,"id must be not null");
         return repository.getRestarauntById(id);
+    }
+
+    public List<Restaurant> getAllRestaurants(){
+        return repository.getAllRestaurants();
     }
 
     @Override

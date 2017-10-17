@@ -31,4 +31,8 @@ public class MenuRepository {
     public void deleteMenu(int id){
         checkNotFoundWithId(crudRepository.deleteById(id),id);
     }
+
+    public List<Menu> findAll(){
+      return crudRepository.getAllMenus();
+    }
 }

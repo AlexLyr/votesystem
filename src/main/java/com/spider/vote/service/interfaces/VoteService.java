@@ -8,10 +8,11 @@ import java.time.LocalDate;
 
 public interface VoteService {
 
-    Vote saveVoteUser(UserVoteTo vote);
 
-    Vote saveVoteAdmin(UserVoteTo vote);
+    Vote saveVote(UserVoteTo vote);
 
-    Vote getVoteForUserAndDate(int user_id, LocalDate date);
+    UserVoteTo getVoteForUserAndDate(int user_id, LocalDate date);
+
+    Vote changeVote(UserVoteTo vote);
 
 }

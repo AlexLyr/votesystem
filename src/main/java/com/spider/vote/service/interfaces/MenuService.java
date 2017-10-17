@@ -16,4 +16,6 @@ public interface MenuService {
     List<Menu> findMenuByRestaurant(Restaurant restaurant);
 
     Menu saveMenu(Menu menu);
+
+    List<Menu> getAllMenu();
 }

@@ -40,4 +40,9 @@ public class MenuServiceImpl implements MenuService {
         Assert.notNull(menu, "menu must be not null");
         return repository.saveMenu(menu);
     }
+
+    @Override
+    public List<Menu> getAllMenu() {
+        return repository.findAll();
+    }
 }

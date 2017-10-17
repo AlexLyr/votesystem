@@ -1,12 +1,13 @@
 package com.spider.vote.domain.entity;
 
 import com.spider.vote.domain.base.BaseEntity;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 
 @Entity
 @Table(name = "user_votes", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "date"}, name = "unique_vote")})
@@ -14,25 +15,32 @@ public class Vote extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
     private User user;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "restaurant_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
     private Restaurant restaurant;
 
     @Column(name = "date", nullable = false)
     @NotNull
-    private LocalDateTime dateTime;
+    private LocalDate date;
 
     public Vote() {
     }
 
-    public Vote(User user, Restaurant restaurant, LocalDateTime dateTime) {
+    public Vote(User user, Restaurant restaurant, LocalDate date) {
+        this(null,user,restaurant,date);
+    }
+
+    public Vote(Integer id, @NotNull User user, @NotNull Restaurant restaurant, @NotNull LocalDate date) {
+        super(id);
         this.user = user;
         this.restaurant = restaurant;
-        this.dateTime = dateTime;
+        this.date = date;
     }
 
     public User getUser() {
@@ -51,24 +59,22 @@ public class Vote extends BaseEntity {
         this.restaurant = restaurant;
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDate getDate() {
+        return date;
     }
 
-    public void setDateTime(LocalDateTime date) {
-        this.dateTime = date;
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
-    public LocalDate getDate(){
-        return this.getDateTime().toLocalDate();
-    }
-
-    public LocalTime getTime(){
-        return this.getDateTime().toLocalTime();
-    }
 
     @Override
     public String toString() {
-        return "Vote id=" + getId();
+        return "Vote{" +
+                "id="+getId()+", "+
+                "user=" + user +
+                ", restaurant=" + restaurant +
+                ", date=" + date +
+                '}';
     }
 }

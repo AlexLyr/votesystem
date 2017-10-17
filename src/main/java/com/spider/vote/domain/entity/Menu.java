@@ -1,6 +1,8 @@
 package com.spider.vote.domain.entity;
 
 import com.spider.vote.domain.base.BaseEntity;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,11 +20,16 @@ public class Menu extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "restaurant_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
     private Restaurant restaurant;
 
 
     public Menu() {
+    }
+
+    public Menu(Restaurant restaurant, LocalDate date) {
+        this(null, restaurant, date);
     }
 
     public Menu(Integer id, Restaurant restaurant, LocalDate date) {

@@ -3,6 +3,8 @@ package com.spider.vote.service.interfaces;
 
 import com.spider.vote.domain.entity.Restaurant;
 
+import java.util.List;
+
 public interface RestaurantService {
 
     void deleteRestaurantById(int id);
@@ -12,4 +14,6 @@ public interface RestaurantService {
     Restaurant getRestaurantById(int id);
 
     Restaurant saveRestaurant(Restaurant restaurant);
+
+    List<Restaurant> getAllRestaurants();
 }

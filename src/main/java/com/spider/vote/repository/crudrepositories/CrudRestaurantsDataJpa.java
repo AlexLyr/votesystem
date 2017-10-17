@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 
 
 @Transactional(readOnly = true)
@@ -22,5 +23,7 @@ public interface CrudRestaurantsDataJpa extends JpaRepository<Restaurant, Intege
     Restaurant save(Restaurant restaurant);
 
     Restaurant getRestaurantById(int id);
+
+    List<Restaurant> findAll();
 
 }
