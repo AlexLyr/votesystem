@@ -6,6 +6,7 @@ import com.spider.vote.domain.entity.Menu;
 import com.spider.vote.repository.crudrepositories.CrudMealDataJpa;
 import com.spider.vote.utils.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -22,14 +23,14 @@ public class MealRepository {
         return crudRepository.findAllMealsByMenu(menu);
     }
 
-    public Meal getUserById(int id) {
+   /* public Meal getMealById(int id) {
         return crudRepository.findMealById(id);
-    }
+    }*/
+
 
     public void delete(int id) throws NotFoundException {
         checkNotFoundWithId(crudRepository.deleteMealById(id), id);
     }
-
     public Meal save(Meal meal) {
         return crudRepository.save(meal);
     }

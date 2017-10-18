@@ -3,10 +3,12 @@ package com.spider.vote.domain.base;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotBlank;
 
 @MappedSuperclass
 public abstract class NamedEntity extends BaseEntity {
     @Column(name = "name", nullable = false)
+    @NotBlank
     protected String name;
 
     public NamedEntity() {

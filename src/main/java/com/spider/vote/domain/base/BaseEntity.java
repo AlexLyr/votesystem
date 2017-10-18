@@ -1,10 +1,13 @@
 package com.spider.vote.domain.base;
 
+import com.spider.vote.web.HasId;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @MappedSuperclass
 @Access(AccessType.FIELD)
-public abstract class  BaseEntity {
+public abstract class  BaseEntity  implements HasId,Serializable {
 
     public static final int START_SEQ = 100;
 

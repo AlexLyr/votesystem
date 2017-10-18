@@ -2,6 +2,7 @@ package com.spider.vote.repository.testdata;
 
 
 import com.spider.vote.domain.entity.Meal;
+import com.spider.vote.utils.json.JsonUtil;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +25,8 @@ public class MealTestData {
     public static final Meal MEAL_12=new Meal(122,"Несвежая курица",50,MENU_6);
     public static final Meal NEW_MEAL=new Meal("Несвежая курица",50,MENU_1);
     public static final Meal UPD_MEAL=new Meal(113,"Несвежая курица111",100,MENU_6);
+    public static final String JSON_NEW_MEAL= JsonUtil.writeValue(NEW_MEAL);
+    public static final String JSON_UPD_MEAL= JsonUtil.writeValue(UPD_MEAL);
 
     public static final List<Meal> MEAL_LIST=
             Arrays.asList(MEAL_1,MEAL_2,MEAL_3,MEAL_4,MEAL_4,MEAL_5,MEAL_6,MEAL_7,MEAL_8,MEAL_9,MEAL_10,MEAL_11,MEAL_12);

@@ -2,6 +2,7 @@ package com.spider.vote.repository.testdata;
 
 
 import com.spider.vote.domain.entity.Menu;
+import com.spider.vote.utils.json.JsonUtil;
 
 import java.time.LocalDate;
 
@@ -24,5 +25,7 @@ public class MenuTestData {
     public static final Menu MENU_6 = new Menu(110, RESTAURANT_104, LocalDate.of(2017, 10, 22));
 
     public static final Menu NEW_MENU = new Menu(RESTAURANT_104, LocalDate.of(2015, 11, 3));
+
+    public static final String JSON_NEW_MENU= JsonUtil.writeValue(NEW_MENU);
 
 }

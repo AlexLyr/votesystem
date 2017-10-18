@@ -4,18 +4,22 @@ import com.spider.vote.domain.entity.User;
 import com.spider.vote.repository.UserRepository;
 import com.spider.vote.service.interfaces.UserService;
 import com.spider.vote.utils.exceptions.NotFoundException;
+import com.spider.vote.web.AuthorizedUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
 import java.util.List;
 
-@Service
-public class UserServiceImp implements UserService {
+@Service("userService")
+public class UserServiceImp implements UserService, UserDetailsService {
 
     @Autowired
     private UserRepository repository;
@@ -66,4 +70,12 @@ public class UserServiceImp implements UserService {
         return repository.save(user);
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = repository.getUserByEmail(email.toLowerCase());
+        if (user == null) {
+            throw new UsernameNotFoundException("User " + email + " is not found");
+        }
+        return new AuthorizedUser(user);
+    }
 }

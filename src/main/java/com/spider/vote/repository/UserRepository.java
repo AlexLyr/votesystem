@@ -6,6 +6,7 @@ import com.spider.vote.repository.crudrepositories.CrudUserDataJpa;
 import com.spider.vote.utils.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,15 +25,23 @@ public class UserRepository {
         return crudRepository.findAll(SORT_NAME_EMAIL);
     }
 
+
     public User getUserByEmail(String email) {
         return crudRepository.findUserByEmail(email);
     }
+
 
     public void delete(int id) throws NotFoundException {
         checkNotFoundWithId(crudRepository.deleteUserById(id), id);
     }
 
+
     public User save(User user) {
         return crudRepository.save(user);
+    }
+
+
+    public User getUserById(int user_id){
+        return crudRepository.findUserById(user_id);
     }
 }

@@ -74,5 +74,13 @@ public class UserVoteTo implements Serializable, HasId {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "UserVoteTo{" +
+                "id=" + id +
+                ", dateTime=" + dateTime +
+                ", chosenRestaurant=" + chosenRestaurant +
+                ", user=" + user +
+                '}';
+    }
 }

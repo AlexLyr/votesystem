@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDate;
 
 import static com.spider.vote.repository.testdata.UserTestData.ADMIN_ID;
+import static com.spider.vote.repository.testdata.UserTestData.USER_ID;
 import static com.spider.vote.repository.testdata.VoteTestData.VOTE_TO_ADMIN;
 import static com.spider.vote.repository.testdata.VoteTestData.VOTE_TO_ADMIN_UPD;
 import static com.spider.vote.repository.testdata.VoteTestData.VOTE_TO_ADMIN_UPD_LATE;
@@ -25,24 +26,24 @@ public class VoteServiceTest extends AbstractTestClass{
 
     @Test
     public void testChangeVote(){
-        service.saveVote(VOTE_TO_ADMIN);
-        service.saveVote(VOTE_TO_ADMIN_UPD);
+        service.saveVote(VOTE_TO_ADMIN,ADMIN_ID);
+        service.saveVote(VOTE_TO_ADMIN_UPD,ADMIN_ID);
         Vote vote=createNewUserVoteFromTo(service.getVoteForUserAndDate(ADMIN_ID,LocalDate.of(2017,10,23)));
         System.out.println(vote);
     }
 
     @Test
     public void testSaveAndGetForUserAndDate(){
-        service.saveVote(VOTE_TO_ADMIN);
+        service.saveVote(VOTE_TO_ADMIN,ADMIN_ID);
         Vote vote=createNewUserVoteFromTo(service.getVoteForUserAndDate(ADMIN_ID,LocalDate.of(2017,10,23)));
         System.out.println(vote);
     }
 
     @Test
     public void testTooLate(){
-        service.saveVote(VOTE_TO_ADMIN);
+        service.saveVote(VOTE_TO_ADMIN,ADMIN_ID);
         thrown.expect(UserVoteTooLateException.class);
-        service.saveVote(VOTE_TO_ADMIN_UPD_LATE);
+        service.saveVote(VOTE_TO_ADMIN_UPD_LATE,ADMIN_ID);
 
     }
 

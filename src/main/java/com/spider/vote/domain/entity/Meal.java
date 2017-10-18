@@ -17,6 +17,7 @@ import javax.validation.constraints.NotNull;
 public class Meal extends NamedEntity {
 
     @Column(name = "price", nullable = false)
+    @NotNull
     private double price;
 
 

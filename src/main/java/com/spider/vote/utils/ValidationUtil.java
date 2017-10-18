@@ -9,6 +9,7 @@ import com.spider.vote.web.HasId;
 import org.springframework.util.CollectionUtils;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -75,6 +76,33 @@ public class ValidationUtil {
             throw new NotFoundException(msg);
         }
         return userVotes;
+    }
+
+    public static void checkDateConsistent(UserVoteTo userVote) {
+        if (userVote.getDateTime().toLocalDate() == null) {
+            userVote.setDateTime(LocalDateTime.now());
+        } else if (!userVote.getDateTime().toLocalDate().isEqual(LocalDate.now())) {
+            throw new UserVoteIncorrectDateException(userVote + " must be with date=" + LocalDate.now());
+        }
+    }
+
+    public static void checkTimeConsistentForSave(UserVoteTo userVote) {
+        if (userVote.getDateTime().toLocalTime() == null) {
+            LocalDateTime now = LocalDateTime.now();
+            if (now.toLocalTime().isAfter(LocalTime.of(11, 0))) {
+                throw new UserVoteTooLateException("It is too late, user vote can't be created");
+            }
+            userVote.setDateTime(now);;
+        }
+    }
+
+    public static void checkTimeConsistentForUpdate(UserVoteTo userVote) {
+        if (userVote.getDateTime().toLocalTime() == null) {
+            userVote.setDateTime(LocalDateTime.now());
+        }
+        if (userVote.getDateTime().toLocalTime().isAfter(LocalTime.of(11, 0))) {
+            throw new UserVoteTooLateException("It is too late, vote can't be changed");
+        }
     }
 
 }

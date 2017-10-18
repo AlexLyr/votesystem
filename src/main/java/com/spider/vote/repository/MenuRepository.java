@@ -4,6 +4,7 @@ import com.spider.vote.domain.entity.Menu;
 import com.spider.vote.domain.entity.Restaurant;
 import com.spider.vote.repository.crudrepositories.CrudMenuDataJpa;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Repository;
 import static com.spider.vote.utils.ValidationUtil.*;
 
@@ -15,6 +16,7 @@ public class MenuRepository {
 
     @Autowired
     private CrudMenuDataJpa crudRepository;
+
 
     public List<Menu> findMenuByDate(LocalDate date){
        return checkNotFoundForToday(crudRepository.findByDate(date),"not found with date: "+date.toString());

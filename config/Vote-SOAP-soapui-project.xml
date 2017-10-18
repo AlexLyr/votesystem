@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="86e99697-e303-4404-bae3-16140c99b94f" activeEnvironment="Default" name="Vote-SOAP"
+                    resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:interface xsi:type="con:RestService" id="d75c7f68-5abb-49d9-a61c-d6a20cf06e78"
+                   wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8080" type="rest"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache/>
+        <con:endpoints>
+            <con:endpoint>http://localhost:8080</con:endpoint>
+        </con:endpoints>
+        <con:resource name="Votesystem" path="/votesystem/" id="126a3084-f420-4700-8cff-bb126c26586f">
+            <con:settings/>
+            <con:parameters/>
+            <con:resource name="admin" path="rest/admin" id="61c51543-0f02-4f67-9094-dad1f02d2e94">
+                <con:settings/>
+                <con:parameters/>
+                <con:resource name="users" path="users" id="89e93ac9-4d01-4213-95a3-4d1322c138d3">
+                    <con:settings/>
+                    <con:parameters/>
+                    <con:resource name="by" path="by" id="f46868b2-340f-41b8-aa1c-236a1b6acefe">
+                        <con:settings/>
+                        <con:parameters>
+                            <con:parameter>
+                                <con:name>email</con:name>
+                                <con:value/>
+                                <con:style>QUERY</con:style>
+                                <con:default/>
+                                <con:description xsi:nil="true"/>
+                            </con:parameter>
+                        </con:parameters>
+                        <con:method name="GetUSerByEmail" id="59c50534-9950-49e3-bd51-6f4488141b07" method="GET">
+                            <con:settings/>
+                            <con:parameters/>
+                            <con:representation type="RESPONSE">
+                                <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                                <con:status>200</con:status>
+                                <con:params/>
+                                <con:element xmlns:by="http://localhost/votesystem/rest/admin/users/by">by:Response
+                                </con:element>
+                            </con:representation>
+                            <con:request name="Request 1" id="a3f19324-a588-47f8-9401-addec6b7c3ec"
+                                         mediaType="application/json">
+                                <con:settings>
+                                    <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                                </con:settings>
+                                <con:endpoint>http://localhost:8080</con:endpoint>
+                                <con:request/>
+                                <con:originalUri>http://localhost/votesystem/rest/admin/users/by</con:originalUri>
+                                <con:credentials>
+                                    <con:authType>No Authorization</con:authType>
+                                </con:credentials>
+                                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                                <con:jmsPropertyConfig/>
+                                <con:parameters>
+                                    <entry key="email" value="admin@gmail.com"
+                                           xmlns="http://eviware.com/soapui/config"/>
+                                </con:parameters>
+                                <con:parameterOrder>
+                                    <con:entry>email</con:entry>
+                                </con:parameterOrder>
+                            </con:request>
+                        </con:method>
+                    </con:resource>
+                    <con:resource name="" path="/101" id="21ee0c4b-158e-4b32-b24e-3862039ea5b7">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:method name="Method 1" id="cdf5e01a-bb6c-4f54-8773-141e6b4a6ca9" method="DELETE">
+                            <con:settings/>
+                            <con:parameters/>
+                            <con:representation type="RESPONSE">
+                                <con:mediaType xsi:nil="true"/>
+                                <con:status>200</con:status>
+                                <con:params/>
+                                <con:element>data</con:element>
+                            </con:representation>
+                            <con:representation type="REQUEST">
+                                <con:mediaType>application/json</con:mediaType>
+                                <con:params/>
+                            </con:representation>
+                            <con:request name="Request 1" id="60cb2884-e3a0-4b96-935e-aacdf3bbf63d"
+                                         mediaType="application/json" postQueryString="false">
+                                <con:settings>
+                                    <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                                </con:settings>
+                                <con:endpoint>http://localhost:8080</con:endpoint>
+                                <con:request/>
+                                <con:originalUri>http://localhost/votesystem/rest/admin/users/101</con:originalUri>
+                                <con:credentials>
+                                    <con:authType>No Authorization</con:authType>
+                                </con:credentials>
+                                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                                <con:jmsPropertyConfig/>
+                                <con:parameters/>
+                            </con:request>
+                        </con:method>
+                    </con:resource>
+                    <con:method name="UpdateUser" id="de4b0a79-4330-4a0c-8b94-b0a67722e7fc" method="PUT">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType xsi:nil="true"/>
+                            <con:status>200</con:status>
+                            <con:params/>
+                            <con:element>data</con:element>
+                        </con:representation>
+                        <con:representation type="REQUEST">
+                            <con:mediaType>application/json</con:mediaType>
+                            <con:params/>
+                        </con:representation>
+                        <con:request name="Request 1" id="7f52fbee-9430-47b3-9c53-c5033b042132"
+                                     mediaType="application/json" postQueryString="false">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request>
+                                {"id":100,"name":"updatedUser","email":"updateduser@yandex.ru","password":"updateduser","roles":["ROLE_USER"],"enabled":true}
+                            </con:request>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/users</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters/>
+                        </con:request>
+                    </con:method>
+                    <con:method name="GetAllUSers" id="add212a7-c192-449e-ba39-157133b8e429" method="GET">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                            <con:status>200</con:status>
+                            <con:params/>
+                            <con:element>Response</con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="61dd3715-f699-44ee-be2a-d567ee05259c"
+                                     mediaType="application/json">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request/>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/users</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters/>
+                        </con:request>
+                    </con:method>
+                </con:resource>
+                <con:resource name="menus" path="menus" id="5849ea74-3429-4cfe-9c2e-75460780ec8b">
+                    <con:settings/>
+                    <con:parameters/>
+                    <con:resource name="by" path="by" id="ba2e89bf-1bbb-4854-95d1-6b96bf04468b">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:resource name="restaurant" path="restaurant" id="6a975876-1160-4b22-9add-c852d398a8b2">
+                            <con:settings/>
+                            <con:parameters>
+                                <con:parameter>
+                                    <con:name>name</con:name>
+                                    <con:value/>
+                                    <con:style>QUERY</con:style>
+                                    <con:default/>
+                                    <con:description xsi:nil="true"/>
+                                </con:parameter>
+                            </con:parameters>
+                            <con:method name="GetMenuByRestaurant" id="f0a10a5e-55d5-4cc0-b22a-a94d7473af69"
+                                        method="GET">
+                                <con:settings/>
+                                <con:parameters/>
+                                <con:representation type="RESPONSE">
+                                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                                    <con:status>200</con:status>
+                                    <con:params/>
+                                    <con:element>Response</con:element>
+                                </con:representation>
+                                <con:request name="Request 1" id="768786af-7f16-4a9e-a38b-fc7719cafa2f"
+                                             mediaType="application/json">
+                                    <con:settings>
+                                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                                    </con:settings>
+                                    <con:endpoint>http://localhost:8080</con:endpoint>
+                                    <con:request/>
+                                    <con:originalUri>http://localhost/votesystem/rest/admin/menus/by/restaurant
+                                    </con:originalUri>
+                                    <con:credentials>
+                                        <con:authType>No Authorization</con:authType>
+                                    </con:credentials>
+                                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                                    <con:jmsPropertyConfig/>
+                                    <con:parameters>
+                                        <entry key="name" value="Столовая" xmlns="http://eviware.com/soapui/config"/>
+                                    </con:parameters>
+                                    <con:parameterOrder>
+                                        <con:entry>name</con:entry>
+                                    </con:parameterOrder>
+                                </con:request>
+                            </con:method>
+                        </con:resource>
+                        <con:resource name="date" path="date" id="7b65fea4-e418-41ba-9c98-ef010c80a012">
+                            <con:settings/>
+                            <con:parameters>
+                                <con:parameter>
+                                    <con:name>date</con:name>
+                                    <con:value/>
+                                    <con:style>QUERY</con:style>
+                                    <con:default/>
+                                    <con:description xsi:nil="true"/>
+                                </con:parameter>
+                            </con:parameters>
+                            <con:method name="GetMenuByDate" id="9012d1d6-86be-4275-a9fa-59cfa73a1cda" method="GET">
+                                <con:settings/>
+                                <con:parameters/>
+                                <con:representation type="RESPONSE">
+                                    <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                                    <con:status>200</con:status>
+                                    <con:params/>
+                                    <con:element>Response</con:element>
+                                </con:representation>
+                                <con:request name="Request 1" id="d51e1a66-1109-47fc-b2ac-8a2e0f9a5333"
+                                             mediaType="application/json">
+                                    <con:settings>
+                                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                                    </con:settings>
+                                    <con:endpoint>http://localhost:8080</con:endpoint>
+                                    <con:request/>
+                                    <con:originalUri>http://localhost/votesystem/rest/admin/menus/by/date
+                                    </con:originalUri>
+                                    <con:credentials>
+                                        <con:authType>No Authorization</con:authType>
+                                    </con:credentials>
+                                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                                    <con:jmsPropertyConfig/>
+                                    <con:parameters>
+                                        <entry key="date" value="2017-10-23" xmlns="http://eviware.com/soapui/config"/>
+                                    </con:parameters>
+                                    <con:parameterOrder>
+                                        <con:entry>date</con:entry>
+                                    </con:parameterOrder>
+                                </con:request>
+                            </con:method>
+                        </con:resource>
+                    </con:resource>
+                    <con:resource name="106" path="106" id="2cb36a38-a4a7-405c-9305-66c3a582019a">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:method name="DeleteMenu106" id="a3a9d53c-6b05-4050-bfd5-0a91910b97ea" method="DELETE">
+                            <con:settings/>
+                            <con:parameters/>
+                            <con:representation type="RESPONSE">
+                                <con:mediaType xsi:nil="true"/>
+                                <con:status>200</con:status>
+                                <con:params/>
+                                <con:element>data</con:element>
+                            </con:representation>
+                            <con:representation type="REQUEST">
+                                <con:mediaType>application/json</con:mediaType>
+                                <con:params/>
+                            </con:representation>
+                            <con:request name="Request 1" id="74d05745-af97-4892-beb3-9a5d12d6efac"
+                                         mediaType="application/json" postQueryString="false">
+                                <con:settings>
+                                    <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                                </con:settings>
+                                <con:endpoint>http://localhost:8080</con:endpoint>
+                                <con:request/>
+                                <con:originalUri>http://localhost/votesystem/rest/admin/menus/106</con:originalUri>
+                                <con:credentials>
+                                    <con:authType>No Authorization</con:authType>
+                                </con:credentials>
+                                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                                <con:jmsPropertyConfig/>
+                                <con:parameters/>
+                            </con:request>
+                        </con:method>
+                    </con:resource>
+                    <con:method name="SaveMenu" id="cbec15a0-d345-4d8b-a617-7b6a9613bb7d" method="POST">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="REQUEST">
+                            <con:mediaType>application/json</con:mediaType>
+                            <con:params/>
+                        </con:representation>
+                        <con:representation type="FAULT">
+                            <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                            <con:status>400</con:status>
+                            <con:params/>
+                            <con:element>html</con:element>
+                        </con:representation>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                            <con:status>201</con:status>
+                            <con:params/>
+                            <con:element xmlns:men="http://localhost/votesystem/rest/admin/menus">men:Response
+                            </con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="d909fa0a-216c-437c-b687-dcdbda5f3a38"
+                                     mediaType="application/json" postQueryString="false">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:encoding>UTF-8</con:encoding>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request>{"date":"2015-11-04","restaurant":{"id":104,"name":"Столовая"}}</con:request>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/menus</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters/>
+                        </con:request>
+                    </con:method>
+                    <con:method name="GetAllMenus" id="45783eae-dd54-4f4c-81c4-02768e496620" method="GET">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                            <con:status>200</con:status>
+                            <con:params/>
+                            <con:element>Response</con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="23afd847-3bed-44e2-8e5b-e6217ffc1d1f"
+                                     mediaType="application/json">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request/>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/menus</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters/>
+                        </con:request>
+                    </con:method>
+                </con:resource>
+                <con:resource name="meals" path="meals" id="2ad2521a-ec5f-47be-9080-76086043f48b">
+                    <con:settings/>
+                    <con:parameters/>
+                    <con:resource name="by" path="by/menu_id/Столовая" id="db4b57b1-ea52-409e-bc97-8e230135bcf7">
+                        <con:settings/>
+                        <con:parameters>
+                            <con:parameter>
+                                <con:name>menu_id</con:name>
+                                <con:value/>
+                                <con:style>QUERY</con:style>
+                                <con:default/>
+                                <con:description xsi:nil="true"/>
+                            </con:parameter>
+                        </con:parameters>
+                        <con:method name="GetMealByNameRestAndMenu_Id" id="43db6f2c-7eb2-4e22-94ac-56c67bd8d326"
+                                    method="GET">
+                            <con:settings/>
+                            <con:parameters/>
+                            <con:representation type="FAULT">
+                                <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                                <con:status>500</con:status>
+                                <con:params/>
+                                <con:element>html</con:element>
+                            </con:representation>
+                            <con:representation type="RESPONSE">
+                                <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                                <con:status>200</con:status>
+                                <con:params/>
+                                <con:element>Response</con:element>
+                            </con:representation>
+                            <con:request name="Request 1" id="6b6ab575-cba5-429e-971b-0bdc21908dc6"
+                                         mediaType="application/json">
+                                <con:settings>
+                                    <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                                </con:settings>
+                                <con:encoding>UTF-8</con:encoding>
+                                <con:endpoint>http://localhost:8080</con:endpoint>
+                                <con:request/>
+                                <con:originalUri>http://localhost/votesystem/rest/admin/meals/by/menu_id/KFC
+                                </con:originalUri>
+                                <con:credentials>
+                                    <con:authType>No Authorization</con:authType>
+                                </con:credentials>
+                                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                                <con:jmsPropertyConfig/>
+                                <con:parameters>
+                                    <entry key="menu_id" value="110" xmlns="http://eviware.com/soapui/config"/>
+                                </con:parameters>
+                                <con:parameterOrder>
+                                    <con:entry>menu_id</con:entry>
+                                </con:parameterOrder>
+                            </con:request>
+                        </con:method>
+                    </con:resource>
+                    <con:resource name="112" path="112" id="3bf00294-91ce-4fe1-9295-13b1d25fadf7">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:method name="DeleteMeal112" id="ac94baa3-0b70-4813-9a26-551040b2a982" method="DELETE">
+                            <con:settings/>
+                            <con:parameters/>
+                            <con:representation type="FAULT">
+                                <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                                <con:status>405</con:status>
+                                <con:params/>
+                                <con:element>html</con:element>
+                            </con:representation>
+                            <con:representation type="REQUEST">
+                                <con:mediaType>application/json</con:mediaType>
+                                <con:params/>
+                            </con:representation>
+                            <con:representation type="RESPONSE">
+                                <con:mediaType xsi:nil="true"/>
+                                <con:status>200</con:status>
+                                <con:params/>
+                                <con:element>data</con:element>
+                            </con:representation>
+                            <con:request name="Request 1" id="013b5859-bca1-4182-91f4-3f1fd037f85d"
+                                         mediaType="application/json" postQueryString="false">
+                                <con:settings>
+                                    <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                                </con:settings>
+                                <con:encoding>UTF-8</con:encoding>
+                                <con:endpoint>http://localhost:8080</con:endpoint>
+                                <con:request/>
+                                <con:originalUri>http://localhost/votesystem/rest/admin/meals/112</con:originalUri>
+                                <con:credentials>
+                                    <con:authType>No Authorization</con:authType>
+                                </con:credentials>
+                                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                                <con:jmsPropertyConfig/>
+                                <con:parameters/>
+                            </con:request>
+                        </con:method>
+                    </con:resource>
+                    <con:method name="SaveMeal" id="6208c696-9523-4b32-8477-72959f5f7936" method="POST">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="FAULT">
+                            <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                            <con:status>400</con:status>
+                            <con:params/>
+                            <con:element>html</con:element>
+                        </con:representation>
+                        <con:representation type="REQUEST">
+                            <con:mediaType>application/json</con:mediaType>
+                            <con:params/>
+                        </con:representation>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                            <con:status>201</con:status>
+                            <con:params/>
+                            <con:element xmlns:meal="http://localhost/votesystem/rest/admin/meals">meal:Response
+                            </con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="da164a20-3d6f-4fbc-acd6-e90ff2620670"
+                                     mediaType="application/json" postQueryString="false">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:encoding>UTF-8</con:encoding>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request>{"name":"Несвежая
+                                курица","price":50.0,"menu":{"id":105,"date":"2017-10-23","restaurant":{"id":102,"name":"KFC"}}}
+                            </con:request>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/meals</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters/>
+                        </con:request>
+                    </con:method>
+                    <con:method name="UpdateMeal" id="a0729ab0-ff8e-403f-bf9d-be7f5bae0cb2" method="PUT">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="REQUEST">
+                            <con:mediaType>application/json</con:mediaType>
+                            <con:params/>
+                        </con:representation>
+                        <con:representation type="FAULT">
+                            <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                            <con:status>400</con:status>
+                            <con:params/>
+                            <con:element>html</con:element>
+                        </con:representation>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType xsi:nil="true"/>
+                            <con:status>200</con:status>
+                            <con:params/>
+                            <con:element>data</con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="3f845c09-9b87-4bb0-be5a-a35def2500b3"
+                                     mediaType="application/json" postQueryString="false">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:encoding>UTF-8</con:encoding>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request>{"id":112,"name":"Несвежая
+                                курица111","price":100.0,"menu":{"id":110,"date":"2017-10-22","restaurant":{"id":104,"name":"Столовая"}}}
+                            </con:request>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/meals</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters/>
+                        </con:request>
+                    </con:method>
+                </con:resource>
+                <con:resource name="votes" path="votes" id="80c68f50-2b35-43d9-8d89-9b237bd12bb7">
+                    <con:settings/>
+                    <con:parameters>
+                        <con:parameter>
+                            <con:name>user_id</con:name>
+                            <con:value/>
+                            <con:style>QUERY</con:style>
+                            <con:default/>
+                            <con:description xsi:nil="true"/>
+                        </con:parameter>
+                        <con:parameter>
+                            <con:name>date</con:name>
+                            <con:value/>
+                            <con:style>QUERY</con:style>
+                            <con:default/>
+                            <con:description xsi:nil="true"/>
+                        </con:parameter>
+                    </con:parameters>
+                    <con:resource name="by" path="by" id="73301a59-5735-4622-b8a0-091c21ef1db2">
+                        <con:settings/>
+                        <con:parameters>
+                            <con:parameter>
+                                <con:name>restaurantName</con:name>
+                                <con:value/>
+                                <con:style>QUERY</con:style>
+                                <con:default/>
+                                <con:description xsi:nil="true"/>
+                            </con:parameter>
+                            <con:parameter>
+                                <con:name>userId</con:name>
+                                <con:value/>
+                                <con:style>QUERY</con:style>
+                                <con:default/>
+                                <con:description xsi:nil="true"/>
+                            </con:parameter>
+                            <con:parameter>
+                                <con:name>sort</con:name>
+                                <con:value/>
+                                <con:style>QUERY</con:style>
+                                <con:default/>
+                                <con:description xsi:nil="true"/>
+                            </con:parameter>
+                        </con:parameters>
+                        <con:method name="Method 1" id="b6e685ce-8225-48c9-ba80-ab7bf50b78ce" method="GET">
+                            <con:settings/>
+                            <con:parameters/>
+                            <con:representation type="RESPONSE">
+                                <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                                <con:status>200</con:status>
+                                <con:params/>
+                                <con:element>Response</con:element>
+                            </con:representation>
+                            <con:representation type="FAULT">
+                                <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                                <con:status>500</con:status>
+                                <con:params/>
+                                <con:element>html</con:element>
+                            </con:representation>
+                            <con:request name="Request 1" id="bcfce2be-a00e-48bc-aa0b-1c0100eddb61"
+                                         mediaType="application/json">
+                                <con:settings>
+                                    <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                                </con:settings>
+                                <con:encoding>UTF-8</con:encoding>
+                                <con:endpoint>http://localhost:8080</con:endpoint>
+                                <con:request/>
+                                <con:originalUri>http://localhost/votesystem/rest/admin/votes/by</con:originalUri>
+                                <con:credentials>
+                                    <con:authType>No Authorization</con:authType>
+                                </con:credentials>
+                                <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                                <con:jmsPropertyConfig/>
+                                <con:parameters>
+                                    <con:entry key="sort" value="desc"/>
+                                    <con:entry key="user_id" value=""/>
+                                </con:parameters>
+                                <con:parameterOrder>
+                                    <con:entry>restaurantName</con:entry>
+                                    <con:entry>user_id</con:entry>
+                                    <con:entry>date</con:entry>
+                                    <con:entry>userId</con:entry>
+                                    <con:entry>sort</con:entry>
+                                </con:parameterOrder>
+                            </con:request>
+                        </con:method>
+                    </con:resource>
+                    <con:method name="SaveVoteUser" id="1f766175-b489-4c31-9e78-44c91f9b2cc2" method="POST">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="FAULT">
+                            <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                            <con:status>400</con:status>
+                            <con:params/>
+                            <con:element>html</con:element>
+                        </con:representation>
+                        <con:representation type="REQUEST">
+                            <con:mediaType>application/json</con:mediaType>
+                            <con:params/>
+                        </con:representation>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                            <con:status>201</con:status>
+                            <con:params/>
+                            <con:element xmlns:vot="http://localhost/votesystem/rest/admin/votes">vot:Response
+                            </con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="f14eebef-7730-43e5-b8cd-6a964f035173"
+                                     mediaType="application/json" postQueryString="false">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:encoding>UTF-8</con:encoding>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request>
+                                {"dateTime":"2017-10-22T07:00:00","chosenRestaurant":{"id":103,"name":"Баклажан"},"user":{"id":100,"name":"User","email":"user@yandex.ru","password":"user","roles":["ROLE_USER"],"enabled":true}}
+                            </con:request>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/votes</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters>
+                                <con:entry key="user_id" value=""/>
+                                <con:entry key="date" value=""/>
+                            </con:parameters>
+                            <con:parameterOrder>
+                                <con:entry>user_id</con:entry>
+                                <con:entry>date</con:entry>
+                            </con:parameterOrder>
+                        </con:request>
+                    </con:method>
+                    <con:method name="ChangeVote" id="10852ef1-ca8b-4c7a-ac43-6def7d7e1325" method="PUT">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="REQUEST">
+                            <con:mediaType>application/json</con:mediaType>
+                            <con:params/>
+                        </con:representation>
+                        <con:representation type="FAULT">
+                            <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                            <con:status>400</con:status>
+                            <con:params/>
+                            <con:element>html</con:element>
+                        </con:representation>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType xsi:nil="true"/>
+                            <con:status>200</con:status>
+                            <con:params/>
+                            <con:element>data</con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="de710bf3-f2cd-4db7-b03b-7f6dc8fc48ad"
+                                     mediaType="application/json" postQueryString="false">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:encoding>UTF-8</con:encoding>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request>
+                                {"id":124,"dateTime":"2017-10-23T09:00:00","chosenRestaurant":{"id":104,"name":"Столовая"},"user":{"id":101,"name":"Admin","email":"admin@gmail.com","password":"admin","roles":["ROLE_ADMIN"],"enabled":true}}
+                            </con:request>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/votes</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters>
+                                <con:entry key="user_id" value=""/>
+                                <con:entry key="date" value=""/>
+                            </con:parameters>
+                            <con:parameterOrder>
+                                <con:entry>user_id</con:entry>
+                                <con:entry>date</con:entry>
+                            </con:parameterOrder>
+                        </con:request>
+                    </con:method>
+                    <con:method name="SaveVoteAdmin" id="520ac0e4-f5d8-4fd2-9c46-179d66149336" method="POST">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="FAULT">
+                            <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                            <con:status>400</con:status>
+                            <con:params/>
+                            <con:element>html</con:element>
+                        </con:representation>
+                        <con:representation type="REQUEST">
+                            <con:mediaType>application/json</con:mediaType>
+                            <con:params/>
+                        </con:representation>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                            <con:status>201</con:status>
+                            <con:params/>
+                            <con:element xmlns:vot="http://localhost/votesystem/rest/admin/votes">vot:Response
+                            </con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="8b7210fa-4ddb-4edf-95a0-d60184622649"
+                                     mediaType="application/json" postQueryString="false">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:encoding>UTF-8</con:encoding>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request>
+                                {"dateTime":"2017-10-23T08:00:00","chosenRestaurant":{"id":103,"name":"Баклажан"},"user":{"id":101,"name":"Admin","email":"admin@gmail.com","password":"admin","roles":["ROLE_ADMIN"],"enabled":true}}
+                            </con:request>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/votes</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters>
+                                <con:entry key="user_id" value=""/>
+                                <con:entry key="date" value=""/>
+                            </con:parameters>
+                            <con:parameterOrder>
+                                <con:entry>user_id</con:entry>
+                                <con:entry>date</con:entry>
+                            </con:parameterOrder>
+                        </con:request>
+                    </con:method>
+                    <con:method name="UpdateVoteTooLate" id="c20b7230-c434-464e-bd56-5a2f66e004e4" method="PUT">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="REQUEST">
+                            <con:mediaType>application/json</con:mediaType>
+                            <con:params/>
+                        </con:representation>
+                        <con:representation type="FAULT">
+                            <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                            <con:status>500</con:status>
+                            <con:params/>
+                            <con:element>html</con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="dc86e4a5-e867-4090-afa6-1833a14784d7"
+                                     mediaType="application/json" postQueryString="false">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:encoding>UTF-8</con:encoding>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request>
+                                {"id":124,"dateTime":"2017-10-23T11:00:00","chosenRestaurant":{"id":104,"name":"Столовая"},"user":{"id":101,"name":"Admin","email":"admin@gmail.com","password":"admin","roles":["ROLE_ADMIN"],"enabled":true}}
+                            </con:request>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/votes</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters>
+                                <con:entry key="user_id" value=""/>
+                                <con:entry key="date" value=""/>
+                            </con:parameters>
+                            <con:parameterOrder>
+                                <con:entry>user_id</con:entry>
+                                <con:entry>date</con:entry>
+                            </con:parameterOrder>
+                        </con:request>
+                    </con:method>
+                    <con:method name="GetVoteByUserAndDate" id="1bdafb20-a5d1-4109-b3de-d2f110262a37" method="GET">
+                        <con:settings/>
+                        <con:parameters/>
+                        <con:representation type="FAULT">
+                            <con:mediaType>text/html;charset=UTF-8</con:mediaType>
+                            <con:status>500</con:status>
+                            <con:params/>
+                            <con:element>html</con:element>
+                        </con:representation>
+                        <con:representation type="RESPONSE">
+                            <con:mediaType>application/json;charset=UTF-8</con:mediaType>
+                            <con:status>200</con:status>
+                            <con:params/>
+                            <con:element>Response</con:element>
+                        </con:representation>
+                        <con:request name="Request 1" id="a55bd0c8-7415-4545-93c3-cdadaafa3f3e"
+                                     mediaType="application/json">
+                            <con:settings>
+                                <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+                            </con:settings>
+                            <con:encoding>UTF-8</con:encoding>
+                            <con:endpoint>http://localhost:8080</con:endpoint>
+                            <con:request/>
+                            <con:originalUri>http://localhost/votesystem/rest/admin/votes</con:originalUri>
+                            <con:credentials>
+                                <con:authType>No Authorization</con:authType>
+                            </con:credentials>
+                            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                            <con:jmsPropertyConfig/>
+                            <con:parameters>
+                                <con:entry key="user_id" value="101"/>
+                                <con:entry key="date" value="2017-10-23"/>
+                            </con:parameters>
+                            <con:parameterOrder>
+                                <con:entry>user_id</con:entry>
+                                <con:entry>date</con:entry>
+                            </con:parameterOrder>
+                        </con:request>
+                    </con:method>
+                </con:resource>
+            </con:resource>
+        </con:resource>
+    </con:interface>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+</con:soapui-project>

@@ -4,6 +4,7 @@ package com.spider.vote.repository;
 import com.spider.vote.domain.entity.Restaurant;
 import com.spider.vote.repository.crudrepositories.CrudRestaurantsDataJpa;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,23 +19,26 @@ public class RestaurantRepository {
     @Autowired
     private CrudRestaurantsDataJpa crudRepository;
 
-    public void deleteRestaurant(int id){
-        checkNotFoundWithId(crudRepository.deleteRestaurantById(id),id);
+
+    public void deleteRestaurant(int id) {
+        checkNotFoundWithId(crudRepository.deleteRestaurantById(id), id);
     }
 
-    public Restaurant getRestarauntByName(String name){
-        return checkNotFound(crudRepository.getRestaurantByName(name),name);
+    public Restaurant getRestarauntByName(String name) {
+        return checkNotFound(crudRepository.getRestaurantByName(name), name);
     }
 
-    public Restaurant getRestarauntById(int id){
-        return checkNotFoundWithId(crudRepository.getRestaurantById(id),id);
+
+    public Restaurant getRestarauntById(int id) {
+        return checkNotFoundWithId(crudRepository.getRestaurantById(id), id);
     }
 
-    public Restaurant saveRestaurant(Restaurant restaurant){
+
+    public Restaurant saveRestaurant(Restaurant restaurant) {
         return crudRepository.save(restaurant);
     }
 
-    public List<Restaurant> getAllRestaurants(){
+    public List<Restaurant> getAllRestaurants() {
         return crudRepository.findAll();
     }
 
